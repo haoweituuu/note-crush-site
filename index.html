@@ -10,7 +10,7 @@
 <body>
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="Note Crush home">
-      <span class="mark" aria-hidden="true">𝄞</span>
+      <img class="app-icon" src="assets/note-crush-icon.png" width="40" height="40" alt="">
       <span>NOTE CRUSH</span>
     </a>
     <nav aria-label="Primary navigation">
@@ -30,9 +30,25 @@
       </div>
     </section>
 
-    <section class="staff-art" aria-label="A stylized musical staff">
-      <span class="clef" aria-hidden="true">𝄞</span>
-      <span class="notes" aria-hidden="true">● ●●</span>
+    <section class="staff-art">
+      <svg class="score" viewBox="0 0 1200 280" role="img" aria-labelledby="score-title score-description" focusable="false">
+        <title id="score-title">C major chord on a treble-clef staff</title>
+        <desc id="score-description">A correctly engraved treble clef followed by the whole notes C4, E4, and G4. All five staff lines remain continuous.</desc>
+        <g aria-hidden="true">
+          <g class="staff-lines">
+            <line x1="42" y1="70" x2="1158" y2="70"></line>
+            <line x1="42" y1="105" x2="1158" y2="105"></line>
+            <line x1="42" y1="140" x2="1158" y2="140"></line>
+            <line x1="42" y1="175" x2="1158" y2="175"></line>
+            <line x1="42" y1="210" x2="1158" y2="210"></line>
+          </g>
+          <text class="score-glyph score-clef" x="74" y="175">&#xE050;</text>
+          <line class="ledger-line" x1="741" y1="245" x2="833" y2="245"></line>
+          <text class="score-glyph score-note" x="756" y="245">&#xE0A2;</text>
+          <text class="score-glyph score-note" x="756" y="210">&#xE0A2;</text>
+          <text class="score-glyph score-note" x="756" y="175">&#xE0A2;</text>
+        </g>
+      </svg>
     </section>
 
     <section class="features" aria-labelledby="features-title">
