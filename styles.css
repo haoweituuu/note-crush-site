@@ -165,7 +165,7 @@ h3 {
   color: var(--ink);
 }
 
-.staff-art {
+.score-strip {
   margin-bottom: 110px;
   padding: 8px 0 20px;
   overflow: hidden;
@@ -325,7 +325,7 @@ footer p { margin-bottom: 0; }
   .site-header { align-items: flex-start; padding: 20px 0; }
   nav { gap: 14px; }
   .hero { padding-top: 72px; }
-  .staff-art { margin-bottom: 80px; }
+  .score-strip { margin-bottom: 80px; }
   .feature-grid { grid-template-columns: 1fr; }
   .feature-grid article { min-height: auto; }
   .feature-number { margin-bottom: 36px; }
@@ -341,5 +341,5 @@ footer p { margin-bottom: 0; }
   footer { width: min(calc(100% - 28px), var(--max)); }
   h1 { font-size: 48px; }
   nav a { font-size: 13px; }
-  .staff-art { padding: 4px 0 12px; }
+  .score-strip { padding: 4px 0 12px; }
 }
