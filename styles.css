@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Bravura Score";
+  src: url("assets/bravura-score.otf") format("opentype");
+  font-display: block;
+  unicode-range: U+E050, U+E0A2;
+}
+
 :root {
   --ink: #171717;
   --muted: #6f6f6b;
@@ -53,15 +60,13 @@ footer {
   text-decoration: none;
 }
 
-.mark {
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  font-family: serif;
-  font-size: 21px;
+.app-icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(23,23,23,.08);
+  border-radius: 11px;
+  box-shadow: 0 3px 10px rgba(23,23,23,.10);
 }
 
 nav,
@@ -161,39 +166,42 @@ h3 {
 }
 
 .staff-art {
-  position: relative;
-  display: flex;
-  align-items: center;
-  min-height: 260px;
   margin-bottom: 110px;
+  padding: clamp(12px, 2vw, 24px);
   overflow: hidden;
-  border-top: 2px solid var(--ink);
-  border-bottom: 2px solid var(--ink);
-  background: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent 48px,
-    var(--ink) 49px,
-    var(--ink) 51px
-  );
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: rgba(255,255,255,.72);
 }
 
-.clef {
-  margin-left: 44px;
-  padding: 0 20px;
-  background: var(--paper);
-  font-family: serif;
-  font-size: 150px;
-  line-height: 1;
+.score {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: var(--ink);
 }
 
-.notes {
-  margin-left: auto;
-  margin-right: 12%;
-  padding: 4px 22px;
-  background: var(--paper);
-  font-size: 56px;
-  letter-spacing: .2em;
+.staff-lines {
+  stroke: currentColor;
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+  shape-rendering: geometricPrecision;
+}
+
+.score-glyph {
+  fill: currentColor;
+  font-family: "Bravura Score";
+}
+
+.score-clef,
+.score-note {
+  font-size: 140px;
+}
+
+.ledger-line {
+  stroke: currentColor;
+  stroke-width: 4.5;
+  vector-effect: non-scaling-stroke;
 }
 
 .features { padding-bottom: 110px; }
@@ -319,9 +327,7 @@ footer p { margin-bottom: 0; }
   .site-header { align-items: flex-start; padding: 20px 0; }
   nav { gap: 14px; }
   .hero { padding-top: 72px; }
-  .staff-art { min-height: 210px; margin-bottom: 80px; }
-  .clef { margin-left: 12px; font-size: 108px; }
-  .notes { margin-right: 4%; font-size: 38px; }
+  .staff-art { margin-bottom: 80px; border-radius: 22px; }
   .feature-grid { grid-template-columns: 1fr; }
   .feature-grid article { min-height: auto; }
   .feature-number { margin-bottom: 36px; }
@@ -330,13 +336,12 @@ footer p { margin-bottom: 0; }
 }
 
 @media (max-width: 520px) {
-  .brand span:last-child { display: none; }
+  .brand { gap: 8px; font-size: 11px; letter-spacing: .16em; }
+  .app-icon { width: 34px; height: 34px; border-radius: 9px; }
   main,
   .site-header,
   footer { width: min(calc(100% - 28px), var(--max)); }
   h1 { font-size: 48px; }
   nav a { font-size: 13px; }
-  .staff-art { min-height: 170px; }
-  .clef { font-size: 86px; }
-  .notes { font-size: 28px; }
+  .staff-art { padding: 8px; border-radius: 18px; }
 }
